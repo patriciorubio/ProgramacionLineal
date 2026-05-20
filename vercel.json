@@ -1,9 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/generate.js", "use": "@vercel/node" },
-    { "src": "public/**",       "use": "@vercel/static" }
-  ],
   "routes": [
     { "src": "/api/generate", "dest": "/api/generate.js" },
     { "src": "/(.*)",         "dest": "/public/$1"       }
@@ -15,9 +11,9 @@
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff"      },
-        { "key": "X-Frame-Options",        "value": "DENY"         },
-        { "key": "Referrer-Policy",        "value": "no-referrer"  }
+        { "key": "X-Content-Type-Options", "value": "nosniff"     },
+        { "key": "X-Frame-Options",        "value": "DENY"        },
+        { "key": "Referrer-Policy",        "value": "no-referrer" }
       ]
     }
   ]
